@@ -17,8 +17,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
+  "browserslist": [
       ">0.2%",
       "not dead",
       "not op_mini all"
@@ -26,15 +25,6 @@
     "devDependencies": {
       "enzyme": "^3.7.0",
       "enzyme-adapter-react-16": "^1.6.0"
-    },
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0"
+    }
   }
-}
+
