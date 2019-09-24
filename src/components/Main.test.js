@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import SubredditPage from './SubredditPage';
+import Main from './Main';
 
 it('renders without crashing', () => {
-  shallow(<SubredditPage/>);
+  shallow(<Main/>);
 });

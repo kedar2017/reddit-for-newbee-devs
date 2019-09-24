@@ -2,9 +2,9 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import PostList from './PostList';
 
-import './SubredditPage.css';
+import './Main.css';
 
-const SubredditPage = props => (
+const Main = props => (
   <div className='content'>
     <Sidebar/>
     <main className='main'>
@@ -13,4 +13,4 @@ const SubredditPage = props => (
   </div>
 );
 
-export default SubredditPage;
+export default Main;

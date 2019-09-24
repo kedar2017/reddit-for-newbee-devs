@@ -9,16 +9,16 @@ const Sidebar = props => (
     <nav className='sidebar__nav'>
       <ul className='sub-list'>
         <li className='sub-list__item'>
-          <Link to='/'>r/all</Link>
+          <Link to='/'>NodeJS</Link>
         </li>
         <li className='sub-list__item'>
-          <Link to='/r/webdev'>r/webdev</Link>
+          <Link to='/r/webdev'>React</Link>
         </li>
         <li className='sub-list__item'>
-          <Link to='/r/javascript'>r/javascript</Link>
+          <Link to='/r/javascript'>Javascript</Link>
         </li>
         <li className='sub-list__item'>
-          <Link to='/r/vim'>r/vim</Link>
+          <Link to='/r/vim'>Angular</Link>
         </li>
       </ul>
     </nav>
