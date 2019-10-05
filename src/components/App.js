@@ -9,8 +9,8 @@ import './App.css';
 const App = props => (
   <Router>
     <div className='app'>
-      <Header subreddit='all'/>
-      <Route exact path='/' component={Main}/>
+      <Header/>
+      <Route path='/' component={Main}/>
     </div>
   </Router>
 );
