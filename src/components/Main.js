@@ -10,7 +10,7 @@ const Main = props => (
     <Sidebar/>
     <main className='main'>
       <Route exact path='/' component={PostList}></Route>
-      <Route path='/' component={PostList}></Route>
+      <Route exact path='/:category' render={({match}) => <PostList category={match.params.category}/>}> </Route>
     </main>
   </div>
 );

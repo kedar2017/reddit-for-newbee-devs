@@ -24,9 +24,9 @@ const mapPosts = posts => posts.map((post, index) => (
   </li>
 ));
 
-const PostList = props => (
+export const PostList = props => (
   <ul className='post-list'>
-    {props.posts ? mapPosts(sortPosts(filterPosts(props.posts,props.match.params.category))) : null}
+    {props.posts ? mapPosts(sortPosts(filterPosts(props.posts,props.category))) : null}
   </ul>
 );
 
