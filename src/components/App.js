@@ -1,20 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './Header';
 
 import Main from './Main';
 
-import './App.css';
 import Post from './Post';
 
+import { createGlobalStyle } from 'styled-components';
+
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'IBM Plex Sans', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  }
+`;
+
 const App = props => (
-  <Router>
     <div className='app'>
       <Header/>
-      <Route path='/' component={Main}/>
+      <GlobalStyle/>
+      <Main/>
       <Post title="What's up dog?" comments="Yoooo!"/>
     </div>
-  </Router>
 );
 
 export default App;

@@ -1,18 +1,20 @@
 import React from 'react';
 import './PostList.css';
 import Post from './Post';
-import { connect } from 'react-redux';
+import styled from 'styled-components/macro';
 
-const filterPosts = (posts,category) =>{
-  return posts.filter(function(post) {
-    return category === post.category
-  });
-};
-
-const sortPosts = posts => {return posts.sort((a,b)=> b.score - a.score)};
+const List = styled.ul`
+list-style: none;
+border: 1px solid #eee;
+`;
+const Item = styled.li`
+:not(:first-child) {
+  border-top: 1px solid #eee;
+}
+`;
 
 const mapPosts = posts => posts.map((post, index) => (
-  <li key={index} className='post-list__item'>
+  <Item key={index} className='post-list__item'>
     <Post
       score={post.score}
       title={post.title}
@@ -21,16 +23,13 @@ const mapPosts = posts => posts.map((post, index) => (
       timestamp={post.timestamp}
       comments={post.comments}
     />
-  </li>
+  </Item>
 ));
 
-export const PostList = props => (
-  <ul className='post-list'>
-    {props.posts ? mapPosts(sortPosts(filterPosts(props.posts,props.category))) : null}
-  </ul>
+const PostList = props => (
+  <List className='post-list'>
+    {props.posts ? mapPosts(props.posts) : null}
+  </List>
 );
 
-const mapStateToProps = state => ({ posts: state.posts })
-
-//export default PostList;
-export default connect(mapStateToProps)(PostList);
+export default PostList;

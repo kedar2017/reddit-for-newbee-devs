@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import './Post.css';
+import styled from 'styled-components/macro';
+
 
 const Post = props => (
   <div className='post'>

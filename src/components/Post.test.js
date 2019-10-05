@@ -29,10 +29,10 @@ it('renders information about the post', () => {
     />
   );
 
-  expect(wrapper.find('.post__title').text()).toEqual(data.title);
-  expect(wrapper.find('.post__url').text()).toEqual(data.url);
-  expect(wrapper.find('.post__author').text()).toEqual(data.author);
-  expect(wrapper.find('.post__timestamp').text()).toEqual(moment(data.timestamp).fromNow());
-  expect(wrapper.find('.post__comments').text()).toEqual(`${data.comments} comments`);
-  expect(wrapper.find('.vote__score').text()).toEqual(data.score.toString());
+  expect(wrapper.find('.Post__Title').text()).toEqual(data.title);
+  expect(wrapper.find('.Post__Url').text()).toEqual(data.url);
+  expect(wrapper.find('.Post__Author').text()).toEqual(data.author);
+  expect(wrapper.find('.Post__Timestamp').text()).toEqual(moment(data.timestamp).fromNow());
+  expect(wrapper.find('.Post__Comments').text()).toEqual(`${data.comments} comments`);
+  expect(wrapper.find('.Vote__Score').text()).toEqual(data.score.toString());
 });
