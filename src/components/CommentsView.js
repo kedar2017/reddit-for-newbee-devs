@@ -21,8 +21,8 @@ const CommentListWrapper = styled.div`
   margin-right: 16px;
 `;
 
-const CommentsView = props => {
-    <>
+const CommentsView = props => (
+    <div>
         <PostWrapper>
             <Post
                 score={props.post.score}
@@ -39,7 +39,7 @@ const CommentsView = props => {
             </CommentListWrapper>
             <CommentForm/>
         </CommentSection>
-    </>
-}
+    </div>
+);
 
 export default CommentsView;

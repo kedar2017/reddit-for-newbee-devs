@@ -14,14 +14,7 @@ const Item = styled.li`
 
 const mapComments = comments => comments.map((comment, index) => (
   <Item key={index} className='post-list__item'>
-    <Comment
-      score={post.score}
-      title={post.title}
-      url={post.url}
-      author={post.author}
-      timestamp={post.timestamp}
-      comments={post.comments}
-    />
+    <Comment {...comments} />
   </Item>
 ));
 
