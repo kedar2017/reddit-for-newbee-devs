@@ -8,6 +8,8 @@ import styled from 'styled-components/macro';
 import './Main.css';
 import PostListContainer from '../containers/PostListContainer';
 
+import CommentsViewContainer from '../containers/PostListContainer';
+
 const Main = props => (
   <div className='content'>
     <Sidebar/>
