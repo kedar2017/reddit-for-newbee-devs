@@ -1,4 +1,3 @@
-import React from 'react';
 import PostList from '../components/PostList';
 import { connect } from 'react-redux';
 
@@ -12,7 +11,7 @@ const filterPosts = (posts,category) =>{
   
 const sortPosts = posts => {return posts.sort((a,b)=> b.score - a.score)};
 
-const mapStateToProps = (state,ownProps) => ({ posts: sortPosts(filterPosts(state.posts,ownProps.category)) });
+const mapStateToProps = (state,ownProps) => ({ posts: sortPosts(filterPosts(state.clone.posts,ownProps.category)) });
 
 //export default PostList;
 export default connect(mapStateToProps)(PostList);

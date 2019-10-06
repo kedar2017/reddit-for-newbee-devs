@@ -7,6 +7,8 @@ import Post from './Post';
 
 import { createGlobalStyle } from 'styled-components';
 
+import Comment from './Comment';
+
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -26,6 +28,7 @@ const App = props => (
       <GlobalStyle/>
       <Main/>
       <Post title="What's up dog?" comments="Yoooo!"/>
+      <Comment author="ME :)"/>
     </div>
 );
 
