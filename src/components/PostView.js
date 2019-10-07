@@ -4,7 +4,6 @@ import Post from './Post';
 import CommentForm from './CommentForm';
 import CommentList from './CommentList';
 
-
 const PostWrapper = styled.div`
 margin-bottom: 16px;
 border: 1px solid #eee;
@@ -21,16 +20,10 @@ const CommentListWrapper = styled.div`
   margin-right: 16px;
 `;
 
-const CommentsView = props => (
+const PostView = props => (
     <div>
         <PostWrapper>
-            <Post
-                score={props.post.score}
-                title={props.post.title}
-                url={props.post.url}
-                author={props.post.author}
-                timestamp={props.post.timestamp}
-                comments={props.post.comments}
+            <Post {...props}
             />
         </PostWrapper>
         <CommentSection>
@@ -42,4 +35,4 @@ const CommentsView = props => (
     </div>
 );
 
-export default CommentsView;
+export default PostView;

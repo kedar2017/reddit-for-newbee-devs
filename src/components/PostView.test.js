@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CommentsView from './CommentsView';
+import PostView from './PostView';
 
 it('renders without crashing', () => {
-  shallow(<CommentsView/>);
+  shallow(<PostView/>);
 });
 

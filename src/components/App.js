@@ -27,8 +27,6 @@ const App = props => (
       <Header/>
       <GlobalStyle/>
       <Main/>
-      <Post title="What's up dog?" comments="Yoooo!"/>
-      <Comment author="ME :)"/>
     </div>
 );
 

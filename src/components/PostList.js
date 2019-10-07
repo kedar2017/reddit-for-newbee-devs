@@ -26,10 +26,10 @@ const mapPosts = posts => posts.map((post, index) => (
   </Item>
 ));
 
-const PostList = props => (
-  <List className='post-list'>
-    {props.posts ? mapPosts(props.posts) : null}
+const PostList = props =>
+  <List>
+    {props.posts && mapPosts(props.posts)}
   </List>
-);
+
 
 export default PostList;

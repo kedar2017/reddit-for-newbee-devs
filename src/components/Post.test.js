@@ -5,7 +5,7 @@ import Post from './Post';
 import moment from 'moment';
 
 it('renders without crashing', () => {
-  shallow(<Post/>);
+  shallow(<Post/>)
 });
 
 it('renders information about the post', () => {
@@ -15,7 +15,7 @@ it('renders information about the post', () => {
     author: 'testuser1',
     score: 5,
     timestamp: '2018-11-05T05:02:38.544Z',
-    comments: 12
+    comments: []
   };
 
   const wrapper = shallow(

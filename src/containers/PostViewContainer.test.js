@@ -1,4 +1,4 @@
-import { mapStateToProps } from './CommentsViewContainer';
+import { mapStateToProps } from './PostViewContainer';
 
 it('displays the correct post', () => {
   const posts = [
@@ -6,7 +6,7 @@ it('displays the correct post', () => {
     { id: 1 }
   ];
 
-  const initialState = { reddit: { posts } };
+  const initialState = { clone: { posts } };
 
   expect(mapStateToProps(initialState, { postId: 1 }).post.id).toEqual(1);
 });

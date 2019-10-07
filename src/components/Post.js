@@ -20,7 +20,7 @@ const Post = props => (
         <span>by</span>
         <a className='post__author' href='/'>{props.author}</a>
         <span className='post__timestamp'>{moment(props.timestamp).fromNow()}</span>
-        <a className='post__comments' href='/'>{props.comments} comments</a>
+        <a className='post__comments' href='/'>{props.comments ? props.comments.length : 0} comments</a>
       </div>
     </div>
   </div>
