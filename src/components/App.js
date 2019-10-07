@@ -9,6 +9,8 @@ import { createGlobalStyle } from 'styled-components';
 
 import Comment from './Comment';
 
+import { Route, Switch } from 'react-router-dom';
+
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -26,7 +28,9 @@ const App = props => (
     <div className='app'>
       <Header/>
       <GlobalStyle/>
-      <Main/>
+      <Switch>
+        <Route path='/' component={Main}/>
+      </Switch>
     </div>
 );
 
