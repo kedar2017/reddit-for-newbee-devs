@@ -10,6 +10,7 @@ import { createGlobalStyle } from 'styled-components';
 import Comment from './Comment';
 
 import { Route, Switch } from 'react-router-dom';
+import LoginForm from './LoginForm';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -29,6 +30,7 @@ const App = props => (
       <Header/>
       <GlobalStyle/>
       <Switch>
+        <Route path='/login' component={LoginForm} />
         <Route path='/' component={Main}/>
       </Switch>
     </div>
