@@ -1,7 +1,7 @@
 const express = require('express');
-const router = express.Router();
-const Post = require('../models/post');
 
+const Post = require('../models/post');
+const router = express.Router();
 router.param('id', (req, res, next, id) => {
     Post.findById(id)
       .then(post => {
@@ -31,6 +31,14 @@ router.post('/', (req, res, next) => {
       .catch(next);
   });
 
+  router.delete('/:id', (req, res, next) => {
+    const { post } = req;
+    post.remove()
+      .then(() => res.status(204).end())
+      .catch(next);
+  });
+  
+
   router.post('/:id', (req, res, next) => {
     const { post } = req;
     post
@@ -38,5 +46,5 @@ router.post('/', (req, res, next) => {
       .then(updatedPost => res.status(201).json(updatedPost))
       .catch(next);
   });
-  
+
 module.exports = router;
