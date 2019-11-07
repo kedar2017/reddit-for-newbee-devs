@@ -2,7 +2,8 @@ const express = require('express');
 
 const Post = require('../models/post');
 const router = express.Router();
-router.param('id', (req, res, next, id) => {
+
+router.param('post', (req, res, next, id) => {
     Post.findById(id)
       .then(post => {
         if (!post) throw new Error('Post not found');
@@ -31,7 +32,7 @@ router.post('/', (req, res, next) => {
       .catch(next);
   });
 
-  router.delete('/:id', (req, res, next) => {
+  router.delete('/:post', (req, res, next) => {
     const { post } = req;
     post.remove()
       .then(() => res.status(204).end())
@@ -39,7 +40,7 @@ router.post('/', (req, res, next) => {
   });
   
 
-  router.post('/:id', (req, res, next) => {
+  router.post('/:post/comments', (req, res, next) => {
     const { post } = req;
     post
       .addComment(req.body.author, req.body.body)
@@ -47,4 +48,12 @@ router.post('/', (req, res, next) => {
       .catch(next);
   });
 
+  router.delete('/:post/comments/:comment', (req, res, next) => {
+    const { post } = req;
+    post
+      .removeComment(req.params.comment)
+      .then(updatedPost => res.json(updatedPost))
+      .catch(next);
+  });
+  
 module.exports = router;
