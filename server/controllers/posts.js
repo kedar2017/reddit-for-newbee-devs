@@ -11,13 +11,18 @@ exports.load = async function (req, res, next, id) {
 };
 
 exports.list = async function (req, res) {
-  const posts = await Post.find();
+  //const posts = await Post.find();
+  const category = req.params.category;
+  const query = category ? {category} : {};
+  const posts = await Post.find(query);
   res.json(posts);
 };
 
 exports.create = async function (req, res, next) {
   try {
-    const { title, url, author, category } = req.body;
+    const { title, url, category } = req.body;
+    const author = req.user.id;
+
     const post = await Post.create({ title, url, author, category });
     res.status(201).json(post);
   } catch (err) {
